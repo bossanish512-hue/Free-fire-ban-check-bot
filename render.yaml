@@ -1,0 +1,9 @@
+services:
+  - type: worker
+    name: discord-bancheck-bot
+    runtime: python
+    envVars:
+      - key: TOKEN
+        sync: false   # यो token Render को Dashboard → Environment मा manually राख
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
